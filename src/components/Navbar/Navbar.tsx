@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import Logo from '../../assets/box-icon.png';
 import {
     Header,
     Wrapper,
-    StyledH1,
+    LogoWrapper,
+    LogoName,
     MenuBurguer,
     MenuBurguerLine1,
     MenuBurguerLine2,
@@ -11,43 +13,53 @@ import {
     StyledUl,
     StyledLi,
     StyledLink,
-    MenuSection
-} from './styles'
+    MenuSection,
+} from './styles';
 
 export default function Navbar() {
     const [showMenuBurguer, setShowMenuBurguer] = useState(true);
 
     const handleShowMenuBurguer = () => {
         setShowMenuBurguer(!showMenuBurguer);
-    }
+    };
+
+    // é como a caixa que contém a propriedade showMenuBurguer (true ou false)
+    // utilizado "...showMenuBurguerProps" para "espalhar" a propriedade showMenuBurguer em várias partes do código, para que elas possam usá-la sem precisar escrever a mesma coisa várias vezes.
+    const showMenuBurguerProps = {
+        showMenuBurguer
+    };
 
     return (
         <Header>
             <Wrapper>
-                <div className='logo'>
-                    <StyledH1>SampleTrak</StyledH1>
-                </div>
+                <LogoWrapper>
+                    <LogoName>SampleTrak</LogoName>
+                    <img src={Logo} alt="Logo" width={35} />
+                </LogoWrapper>
 
-                <MenuSection showMenuBurguer={showMenuBurguer}>
-                    <MenuBurguer onClick={handleShowMenuBurguer} showMenuBurguer={showMenuBurguer}>
-                        <MenuBurguerLine1 showMenuBurguer={showMenuBurguer} />
-                        <MenuBurguerLine2 showMenuBurguer={showMenuBurguer} />
-                        <MenuBurguerLine3 showMenuBurguer={showMenuBurguer} />
+                <MenuSection {...showMenuBurguerProps}>
+                    <MenuBurguer onClick={handleShowMenuBurguer} {...showMenuBurguerProps}>
+                        <MenuBurguerLine1 {...showMenuBurguerProps} />
+                        <MenuBurguerLine2 {...showMenuBurguerProps} />
+                        <MenuBurguerLine3 {...showMenuBurguerProps} />
                     </MenuBurguer>
 
-                    <Nav showMenuBurguer={showMenuBurguer}>
-                        <StyledUl showMenuBurguer={showMenuBurguer}>
+                    <Nav {...showMenuBurguerProps}>
+                        <StyledUl {...showMenuBurguerProps}>
                             <StyledLi>
-                                <StyledLink href="/" showMenuBurguer={showMenuBurguer}>Home</StyledLink>
+                                <StyledLink href="/" {...showMenuBurguerProps}>
+                                    Home
+                                </StyledLink>
                             </StyledLi>
-
                             <StyledLi>
-                                <StyledLink href="#" showMenuBurguer={showMenuBurguer}>Login</StyledLink>
+                                <StyledLink href="#" {...showMenuBurguerProps}>
+                                    Login
+                                </StyledLink>
                             </StyledLi>
                         </StyledUl>
                     </Nav>
                 </MenuSection>
             </Wrapper>
         </Header>
-    )
+    );
 }

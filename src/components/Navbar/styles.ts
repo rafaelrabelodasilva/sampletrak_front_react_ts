@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import '../../Styles/fonts.css';
 
+//Verificado propriedade para aplicar certas estilizações
 type MenuBurguerProps = {
     showMenuBurguer: boolean;
 };
@@ -8,6 +9,7 @@ type MenuBurguerProps = {
 export const Header = styled.header`
     background: linear-gradient(90deg, #07c972, #359d9e);
 `;
+
 export const Wrapper = styled.div`
     height: 65px;
     display: flex;
@@ -17,11 +19,20 @@ export const Wrapper = styled.div`
     max-width: 1100px;
     margin: auto;
 `;
-export const StyledH1 = styled.h1`
+
+export const LogoWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+`;
+
+export const LogoName = styled.h1`
     font-family: 'Shippori Antique', sans-serif;
     color: White;
     font-size: 3rem;
 `;
+
 export const MenuSection = styled.div<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         position: ${showMenuBurguer ? '' : 'absolute'};
@@ -35,6 +46,7 @@ export const MenuSection = styled.div<MenuBurguerProps>`
         justify-content: ${showMenuBurguer ? '' : 'center'};
     `}
 `;
+
 export const Nav = styled.nav<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         display: ${showMenuBurguer ? '' : 'block'};
@@ -43,15 +55,18 @@ export const Nav = styled.nav<MenuBurguerProps>`
         }
     `}
 `;
+
 export const StyledUl = styled.ul<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         display: ${showMenuBurguer ? 'flex' : 'block'};
         text-align: ${showMenuBurguer ? '' : 'center'};
     `}
 `;
+
 export const StyledLi = styled.li`
     list-style: none;
 `;
+
 export const StyledLink = styled.a<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         font-family: ${showMenuBurguer ? "'Roboto', sans-serif" : ''};
@@ -70,6 +85,8 @@ export const StyledLink = styled.a<MenuBurguerProps>`
         }
     `}
 `;
+
+//Estilos do menu burguer
 export const MenuBurguer = styled.div<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         position: ${showMenuBurguer ? '' : 'absolute'};
@@ -81,6 +98,7 @@ export const MenuBurguer = styled.div<MenuBurguerProps>`
         height: 30px;
     }
 `;
+
 export const MenuBurguerLine1 = styled.div<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         transform: ${showMenuBurguer ? '' : 'rotate(45deg) translate(7px, 7px)'};
@@ -93,6 +111,7 @@ export const MenuBurguerLine1 = styled.div<MenuBurguerProps>`
         transition-duration: 0.3s;
     }
 `;
+
 export const MenuBurguerLine2 = styled.div<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         opacity: ${showMenuBurguer ? '' : '0'};
@@ -105,6 +124,7 @@ export const MenuBurguerLine2 = styled.div<MenuBurguerProps>`
         transition-duration: 0.3s;
     }
 `;
+
 export const MenuBurguerLine3 = styled.div<MenuBurguerProps>`
     ${({ showMenuBurguer }) => css`
         transform: ${showMenuBurguer ? '' : 'rotate(-45deg) translate(8px, -9px)'};

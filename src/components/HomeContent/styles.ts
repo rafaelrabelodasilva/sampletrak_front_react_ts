@@ -2,14 +2,20 @@ import styled from 'styled-components'
 import '../../Styles/fonts.css';
 
 export const Wrapper = styled.div`
-    background-color: white;
+    // background-color: white;
 
     width: 90%;
     max-width: 1100px;
     margin: auto;
     text-align: center;
-    /* box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.1); */
 `;
+
+
+
+
+
+
+
 
 export const SectionLogo = styled.div`
     /* background-color: aquamarine; */
