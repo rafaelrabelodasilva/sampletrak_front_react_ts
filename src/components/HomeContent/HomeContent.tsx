@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Pic1 from '../../assets/logo_2.jpg'
 import Pic2 from '../../assets/logo_4.jpg'
 import Pic3 from '../../assets/logo_5.jpg'
@@ -15,8 +16,31 @@ import {
     Img,
     TexContainer
 } from './styles'
+import './styles.css'
 
 export default function HomeContent() {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Aqui você pode lidar com os dados do formulário
+        console.log('Dados do formulário:', formData);
+    };
+
+
     return (
         <Wrapper>
             <SectionLogo>
@@ -77,9 +101,64 @@ export default function HomeContent() {
                             Explore mais e descubra como podemos fazer a diferença para você.
                             Entre em contato hoje mesmo!
                         </p>
+
                     </TexContainer>
+
                 </Content>
             </SectionContactUs>
+            <div className='section-contact-us'>
+                <form className="formulario" method="post" onSubmit={handleSubmit}>
+
+                    <h2 className="titulo">Formulário para contato</h2>
+                    <p className='subtitle'>Preencha os campos abaixo que entraremos em contato.</p>
+                    <label className="label" htmlFor="name">
+
+                        <input
+                            value={formData.name}
+                            onChange={handleChange}
+                            type="text"
+                            id="name"
+                            name="name"
+                            className="input-bordas"
+                            placeholder="Nome"
+                        />
+                        <span className="focus-border"> <i></i> </span>
+
+                    </label>
+
+                    <label className="label" htmlFor="email">
+
+                        <input
+                            value={formData.email}
+                            onChange={handleChange}
+                            type="email"
+                            name="email"
+                            className="input-bordas"
+                            placeholder="E-mail" />
+                        <span className="focus-border"> <i></i> </span>
+
+                    </label>
+
+                    <label className="label" htmlFor="message">
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            type="text"
+                            className="input-bordas textarea"
+                            rows="4"
+                            placeholder="Assunto"
+                        />
+                        <span className="focus-border"> <i></i> </span>
+
+                    </label>
+
+                    <button className="button-form borda-inversa" type="submit">Enviar</button>
+
+                </form>
+            </div>
         </Wrapper>
     )
 }

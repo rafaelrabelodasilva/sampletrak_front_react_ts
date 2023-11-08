@@ -10,13 +10,6 @@ export const Wrapper = styled.div`
     text-align: center;
 `;
 
-
-
-
-
-
-
-
 export const SectionLogo = styled.div`
     /* background-color: aquamarine; */
     
@@ -103,4 +96,6 @@ export const TexContainer = styled.div`
 
 export const StyledH2 = styled.h2`
     font-size: 2rem;
+    text-align: start;
+    color: #27374D;
 `
