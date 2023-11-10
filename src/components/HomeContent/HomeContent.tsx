@@ -14,7 +14,17 @@ import {
     StyledH2,
     ImgContainer,
     Img,
-    TexContainer
+    TexContainer,
+    SectionForm,
+    FormTitle,
+    FormSubtitle,
+    StyledForm,
+    StyledLabel,
+    StyledInput,
+    StyledTextArea,
+    StyledButton,
+    FormContainer,
+    ImgContainerText
 } from './styles'
 import './styles.css'
 
@@ -88,11 +98,10 @@ export default function HomeContent() {
 
             <SectionContactUs>
                 <ImgContent>
-                    <ImgContainer>
+                    <ImgContainerText>
                         <Img src={Pic3} alt="Logo 1" id='logo1' />
-                    </ImgContainer>
-                </ImgContent>
-                <Content>
+                    </ImgContainerText>
+
                     <TexContainer>
                         <StyledH2>Pronto para experimentar o futuro das amostras?</StyledH2>
                         <p>
@@ -103,62 +112,55 @@ export default function HomeContent() {
                         </p>
 
                     </TexContainer>
+                </ImgContent>
+                <Content>
+                    <FormContainer>
 
-                </Content>
-            </SectionContactUs>
-            <div className='section-contact-us'>
-                <form className="formulario" method="post" onSubmit={handleSubmit}>
+                <StyledForm method="post" onSubmit={handleSubmit}>
 
-                    <h2 className="titulo">Formulário para contato</h2>
-                    <p className='subtitle'>Preencha os campos abaixo que entraremos em contato.</p>
-                    <label className="label" htmlFor="name">
+                    <FormTitle>Formulário para contato</FormTitle>
+                    <FormSubtitle>Preencha os campos abaixo que entraremos em contato.</FormSubtitle>
 
-                        <input
+                    <StyledLabel htmlFor="name">
+                        <StyledInput
                             value={formData.name}
                             onChange={handleChange}
                             type="text"
                             id="name"
                             name="name"
-                            className="input-bordas"
                             placeholder="Nome"
                         />
-                        <span className="focus-border"> <i></i> </span>
+                    </StyledLabel>
 
-                    </label>
-
-                    <label className="label" htmlFor="email">
-
-                        <input
+                    <StyledLabel htmlFor="email">
+                        <StyledInput
                             value={formData.email}
                             onChange={handleChange}
                             type="email"
                             name="email"
-                            className="input-bordas"
                             placeholder="E-mail" />
-                        <span className="focus-border"> <i></i> </span>
+                    </StyledLabel>
 
-                    </label>
-
-                    <label className="label" htmlFor="message">
-
-                        <textarea
+                    <StyledLabel htmlFor="message">
+                        <StyledTextArea
                             id="message"
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
                             type="text"
-                            className="input-bordas textarea"
                             rows="4"
                             placeholder="Assunto"
                         />
-                        <span className="focus-border"> <i></i> </span>
 
-                    </label>
+                    </StyledLabel>
 
-                    <button className="button-form borda-inversa" type="submit">Enviar</button>
+                    <StyledButton type="submit">Enviar</StyledButton>
 
-                </form>
-            </div>
+                </StyledForm>
+                </FormContainer>
+
+                </Content>
+            </SectionContactUs>
         </Wrapper>
     )
 }
