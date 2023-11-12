@@ -1,21 +1,17 @@
 import { useState } from 'react';
-import Pic1 from '../../assets/logo_2.jpg'
-import Pic2 from '../../assets/logo_4.jpg'
-import Pic3 from '../../assets/logo_5.jpg'
+import Pic1 from '../../assets/img_1.jpg'
+import Pic2 from '../../assets/img_2.jpg'
+import Pic3 from '../../assets/img_3.jpg'
+import Pic4 from '../../assets/img_4.jpg'
 import {
     Wrapper,
     SectionLogo,
-    SectionWhatWeDo,
-    SectionWhyChooseUs,
-    SectionContactUs,
-    Content,
-    ImgContent,
+    Section,
+    Imgcontainer,
+    StyledImg,
+    TextContainer,
     StyledH1,
     StyledH2,
-    ImgContainer,
-    Img,
-    TexContainer,
-    SectionForm,
     FormTitle,
     FormSubtitle,
     StyledForm,
@@ -23,10 +19,8 @@ import {
     StyledInput,
     StyledTextArea,
     StyledButton,
-    FormContainer,
-    ImgContainerText
+    FormContainer
 } from './styles'
-import './styles.css'
 
 export default function HomeContent() {
 
@@ -36,16 +30,16 @@ export default function HomeContent() {
         message: '',
     });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = event.target;
         setFormData({
             ...formData,
             [name]: value,
         });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
         // Aqui você pode lidar com os dados do formulário
         console.log('Dados do formulário:', formData);
     };
@@ -58,109 +52,102 @@ export default function HomeContent() {
                 <p>Simplificando a excelência do controle de amostras</p>
             </SectionLogo>
 
-            <SectionWhatWeDo>
-                <ImgContent>
-                    <ImgContainer>
-                        <Img src={Pic1} alt="Logo 1" id='logo1' />
-                    </ImgContainer>
-                </ImgContent>
-                <Content>
-                    <TexContainer>
-                        <StyledH2>O que fazemos</StyledH2>
-                        <p>
-                            Nossa aplicação foi projetada para pessoas apaixonadas por
-                            qualidade e comprometidas em aperfeiçoar cada etapa do processo de amostras.
-                            Imagine poder rastrear cada detalhe, desde o momento em que a amostra é
-                            concebida até o momento em que ela é entregue ao cliente satisfeito.
-                        </p>
-                    </TexContainer>
-                </Content>
-            </SectionWhatWeDo>
+            <Section>
+                <Imgcontainer>
+                    <StyledImg src={Pic1} alt="Imagem o que fazemos" id='img-1' />
+                </Imgcontainer>
 
-            <SectionWhyChooseUs>
-                <ImgContent>
-                    <ImgContainer>
-                        <Img src={Pic2} alt="Logo 1" id='logo1' />
-                    </ImgContainer>
-                </ImgContent>
-                <Content>
-                    <TexContainer>
-                        <StyledH2>Por que nos escolher?</StyledH2>
-                        <p>
-                            Com nossa ferramenta, você estará no controle completo.
-                            Saiba quando sua amostra começa a tomar forma, quando estará pronta e se está dentro do prazo.
-                            Identifique a importância de cada amostra e tome decisões informadas sobre seu destino.
-                            Precisa enviar a amostra para o cliente para aprovação em mãos? Nós simplificamos isso para você.
-                        </p>
-                    </TexContainer>
-                </Content>
-            </SectionWhyChooseUs>
+                <TextContainer>
+                    <StyledH2>O que fazemos</StyledH2>
+                    <p>
+                        Nossa aplicação foi projetada para pessoas apaixonadas por
+                        qualidade e comprometidas em aperfeiçoar cada etapa do processo de amostras.
+                        Imagine poder rastrear cada detalhe, desde o momento em que a amostra é
+                        concebida até o momento em que ela é entregue ao cliente satisfeito.
+                    </p>
+                </TextContainer>
+            </Section>
 
-            <SectionContactUs>
-                <ImgContent>
-                    <ImgContainerText>
-                        <Img src={Pic3} alt="Logo 1" id='logo1' />
-                    </ImgContainerText>
+            <Section $flexDirection='row-reverse'>
+                <Imgcontainer>
+                    <StyledImg src={Pic2} alt="Imagem porque nos escolher" id='img-2' />
+                </Imgcontainer>
 
-                    <TexContainer>
-                        <StyledH2>Pronto para experimentar o futuro das amostras?</StyledH2>
-                        <p>
-                            Deixe-nos cuidar do controle de amostras, para que você possa se concentrar no que faz de melhor.
-                            É hora de elevar seus padrões e garantir a excelência em cada amostra.
-                            Explore mais e descubra como podemos fazer a diferença para você.
-                            Entre em contato hoje mesmo!
-                        </p>
+                <TextContainer>
+                    <StyledH2>Por que nos escolher?</StyledH2>
+                    <p>
+                        Com nossa ferramenta, você estará no controle completo.
+                        Saiba quando sua amostra começa a tomar forma, quando estará pronta e se está dentro do prazo.
+                        Identifique a importância de cada amostra e tome decisões informadas sobre seu destino.
+                        Precisa enviar a amostra para o cliente para aprovação em mãos? Nós simplificamos isso para você.
+                    </p>
+                </TextContainer>
+            </Section>
 
-                    </TexContainer>
-                </ImgContent>
-                <Content>
-                    <FormContainer>
+            <Section>
+                <Imgcontainer>
+                    <StyledImg src={Pic4} alt="Imagem pronto para experimentar" id='img-3' />
+                </Imgcontainer>
 
-                <StyledForm method="post" onSubmit={handleSubmit}>
+                <TextContainer>
+                    <StyledH2>Pronto para experimentar o futuro das amostras?</StyledH2>
+                    <p>
+                        Deixe-nos cuidar do controle de amostras, para que você possa se concentrar no que faz de melhor.
+                        É hora de elevar seus padrões e garantir a excelência em cada amostra.
+                        Explore mais e descubra como podemos fazer a diferença para você.
+                        Entre em contato hoje mesmo!
+                    </p>
+                </TextContainer>
+            </Section>
 
-                    <FormTitle>Formulário para contato</FormTitle>
-                    <FormSubtitle>Preencha os campos abaixo que entraremos em contato.</FormSubtitle>
+            <Section $flexDirection='row-reverse'>
+                <Imgcontainer>
+                    <StyledImg $maxWidth='370px' src={Pic3} alt="Imagem nos contacte" id='img-4' />
+                </Imgcontainer>
 
-                    <StyledLabel htmlFor="name">
-                        <StyledInput
-                            value={formData.name}
-                            onChange={handleChange}
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Nome"
-                        />
-                    </StyledLabel>
+                <FormContainer>
+                    <StyledForm method="post" onSubmit={handleSubmit}>
 
-                    <StyledLabel htmlFor="email">
-                        <StyledInput
-                            value={formData.email}
-                            onChange={handleChange}
-                            type="email"
-                            name="email"
-                            placeholder="E-mail" />
-                    </StyledLabel>
+                        <FormTitle>Formulário para contato</FormTitle>
+                        <FormSubtitle>Preencha os campos abaixo que entraremos em contato.</FormSubtitle>
 
-                    <StyledLabel htmlFor="message">
-                        <StyledTextArea
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            type="text"
-                            rows="4"
-                            placeholder="Assunto"
-                        />
+                        <StyledLabel htmlFor="name">
+                            <StyledInput
+                                value={formData.name}
+                                onChange={handleChange}
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Nome"
+                            />
+                        </StyledLabel>
 
-                    </StyledLabel>
+                        <StyledLabel htmlFor="email">
+                            <StyledInput
+                                value={formData.email}
+                                onChange={handleChange}
+                                type="email"
+                                name="email"
+                                placeholder="E-mail" />
+                        </StyledLabel>
 
-                    <StyledButton type="submit">Enviar</StyledButton>
+                        <StyledLabel htmlFor="message">
+                            <StyledTextArea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Assunto"
+                                rows={6}
+                            />
 
-                </StyledForm>
+                        </StyledLabel>
+
+                        <StyledButton type="submit">Enviar</StyledButton>
+
+                    </StyledForm>
                 </FormContainer>
-
-                </Content>
-            </SectionContactUs>
+            </Section>
         </Wrapper>
     )
 }
