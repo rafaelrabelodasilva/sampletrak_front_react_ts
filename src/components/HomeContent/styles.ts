@@ -8,10 +8,9 @@ export const Wrapper = styled.div`
     max-width: 1100px;
     margin: auto;
     text-align: center;
-    padding: 3rem 0 3rem 0rem;
 `;
 
-export const SectionLogo = styled.section`
+export const CompanyLogoSession = styled.section`
     /* background-color: teal; */
     
     display: flex;
@@ -19,15 +18,22 @@ export const SectionLogo = styled.section`
     justify-content: center;
     flex-direction: column;
     padding: 3rem 0;
+    height: 100vh;
+    background: linear-gradient(90deg, #07c972, #359d9e);
 `
 
-export const StyledH1 = styled.h1`
+export const CompanyName = styled.h1`
     font-family: 'Shippori Antique', sans-serif;
-    font-size: 3.4rem;
     margin-bottom: 1rem;
+    font-size: 7rem;
     text-align: start;
-    color: #27374D;
+    color: #FEFEFE;
 `
+
+export const CompanySubtitle = styled.p`
+    color: #FEFEFE;
+    font-size: 2.5rem;
+`;
 
 export const Section = styled.section<{ $flexDirection?: string; }>`
     /* background-color: aquamarine; */
@@ -36,7 +42,20 @@ export const Section = styled.section<{ $flexDirection?: string; }>`
     flex-direction: ${props => props.$flexDirection ?? "row"};
     align-items: center;
     justify-content: center;
-    padding: 3rem 0;
+    height: 60rem;
+    margin: 3rem 0;
+    padding: 0 3rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    border-radius: 1rem;
+
+    @media (max-width: 709px) {
+        height: 40rem;
+        width: 90%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
 `
 
 export const Imgcontainer = styled.div`
@@ -51,7 +70,7 @@ export const Imgcontainer = styled.div`
     }
 `;
 
-export const StyledImg = styled.img<{ $maxWidth?: string; }>`
+export const Image = styled.img<{ $maxWidth?: string; }>`
     max-width: ${props => props.$maxWidth ?? "300px"};;
     height: auto;
 `;
@@ -61,15 +80,13 @@ export const TextContainer = styled.div`
 
     width: 45%;
     text-align: justify;
-    line-height: 2.1rem;
 
     @media (max-width: 709px) {
         width: 90%;
     }
 `;
 
-export const StyledH2 = styled.h2`
-    font-size: 2rem;
+export const Subtitle = styled.h2`
     color: #27374D;
     padding-bottom: 2rem;
     text-align: start;
@@ -90,38 +107,38 @@ export const FormContainer = styled.div`
     }
 `;
 
-export const StyledForm = styled.form`
-    max-width: 500px;
+export const Form = styled.form`
+    /* max-width: 400px; */
     margin: auto;
-    background: linear-gradient(90deg, #07c97262, #359c9e41);
-    padding: 2rem;
+    background-color: #DDE6ED;
+    /* background: linear-gradient(90deg, #07c97262, #359c9e41); */
+    padding: 3rem 2rem;
     border-radius: 0.5rem;
 `;
 
 export const FormTitle = styled.h2`
     color: #27374D;
-    font-size: 2.2rem;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
 `;
 
 export const FormSubtitle = styled.p`
     margin: 1.5rem 0 2rem 0;
-    color: black;
 `;
 
-export const StyledLabel = styled.label`
+export const InputLabel = styled.label`
     width: 100%;
     margin-bottom: 1.5rem;
     display: flex;
 `;
 
-export const StyledInput = styled.input`
+export const FormInput = styled.input`
     color: #333;
     width: 100%;
+    height: 4.7rem;
     border: none;
     border-radius: 0.5rem;
-    padding: 0.7rem 1.4rem 0.9rem;
+    padding: 1rem 1.4rem;
     font-family: 'Roboto', sans-serif;
 `;
 
@@ -130,7 +147,7 @@ export const StyledTextArea = styled.textarea`
     width: 100%;
     border: none;
     border-radius: 0.5rem;
-    padding: 0.7rem 1.4rem 0.9rem;
+    padding: 1rem 1.4rem;
     font-family: 'Roboto', sans-serif;
 `;
 
@@ -138,7 +155,7 @@ export const StyledButton = styled.button`
     background-color: #26BC62;
     padding: 0.9rem 1.3rem;
     color: white;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     border: none;
     cursor: pointer;
     border-radius: 0.5rem;
@@ -146,6 +163,6 @@ export const StyledButton = styled.button`
     font-family: 'Roboto', sans-serif;
 
     &:hover {
-        background-color: #26BC72;
+        background-color: #26BF92;
     }
 `;

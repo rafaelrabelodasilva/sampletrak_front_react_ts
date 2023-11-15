@@ -15,11 +15,11 @@ export const GlobalStyle = createGlobalStyle`
 
     html, body {
         height: 100%;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
     }
 
     body {
-        font-size: 1.6rem; //16px
+        font-size: 1.8rem; //16px
         font-family: 'Roboto', sans-serif;
     }
 
@@ -27,5 +27,22 @@ export const GlobalStyle = createGlobalStyle`
         html {
             font-size: 50%;
         }
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+        line-height: 3.1rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    p {
+        line-height: 2.3rem;
     }
 `
