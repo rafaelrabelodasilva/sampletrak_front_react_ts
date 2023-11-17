@@ -22,27 +22,4 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1.8rem; //16px
         font-family: 'Roboto', sans-serif;
     }
-
-    @media(max-width: 964px) {
-        html {
-            font-size: 50%;
-        }
-    }
-
-    h1 {
-        font-size: 4rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-        line-height: 3.1rem;
-    }
-
-    h3 {
-        font-size: 2rem;
-    }
-
-    p {
-        line-height: 2.3rem;
-    }
 `

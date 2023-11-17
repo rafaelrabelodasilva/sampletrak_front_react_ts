@@ -7,7 +7,8 @@ type MenuBurguerProps = {
 };
 
 export const Header = styled.header`
-    background: linear-gradient(90deg, #07c972, #359d9e);
+    /* background: linear-gradient(90deg, #07c972, #359d9e); */
+    background-color: #27374D;
 `;
 
 export const Wrapper = styled.div`
@@ -31,6 +32,10 @@ export const LogoName = styled.h1`
     font-family: 'Shippori Antique', sans-serif;
     color: White;
     font-size: 3rem;
+
+    @media (max-width: 709px) {
+        font-size: 2rem;
+    }
 `;
 
 export const MenuSection = styled.div<MenuBurguerProps>`

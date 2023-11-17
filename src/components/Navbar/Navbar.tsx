@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Logo from '../../assets/box-icon.png';
+import Logo from '../../../public/assets/box-icon.png';
 import {
     Header,
     Wrapper,

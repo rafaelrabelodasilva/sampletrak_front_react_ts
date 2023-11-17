@@ -1,0 +1,3 @@
+# Conteúdo
+
+Aqui ficará os arquivos gerais compartilhados por várias telas. Ex.: imagem de logo...
