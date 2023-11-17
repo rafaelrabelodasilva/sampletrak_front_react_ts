@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import Pic1 from '../../assets/img_1.jpg'
 import Pic2 from '../../assets/img_2.jpg'
 import Pic3 from '../../assets/img_3.jpg'
@@ -22,29 +22,46 @@ import {
     StyledButton,
     FormContainer
 } from './styles'
+import axios from 'axios'
 
 export default function HomeContent() {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
+    const data = { name: '', email: '', message: '' };
+    const [inputData, setInputData] = useState(data);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = event.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+    const handleData = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputData({ ...inputData, [event.target.name]: event.target.value });
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
-        // Aqui você pode lidar com os dados do formulário
-        console.log('Dados do formulário:', formData);
+
+        // Ajuste para enviar apenas as propriedades necessárias
+        const { name, email, message } = inputData;
+
+        // Certifique-se de que o campo "email" está no formato correto
+        if (!validateEmail(email)) {
+            alert('Por favor, insira um endereço de e-mail válido.');
+            return;
+        }
+
+        axios
+            .post('http://localhost:3000/comunicacoes', { nome: name, email: email, assunto: message, ativo: 1 })
+            .then((response) => {
+                console.log(response);
+                alert('Funcionou!');
+            })
+            .catch((error) => {
+                console.error('Erro na requisição:', error);
+                alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+            });
     };
 
+    // Função para validar o formato do e-mail
+    const validateEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    };
 
     return (
         <>
@@ -107,44 +124,46 @@ export default function HomeContent() {
                     </Imgcontainer>
 
                     <FormContainer>
-                        <Form method="post" onSubmit={handleSubmit}>
+                        <Form method="post">
 
                             <FormTitle>Formulário para contato</FormTitle>
                             <FormSubtitle>Preencha os campos abaixo que entraremos em contato.</FormSubtitle>
 
                             <InputLabel htmlFor="name">
                                 <FormInput
-                                    value={formData.name}
-                                    onChange={handleChange}
                                     type="text"
                                     id="name"
                                     name="name"
                                     placeholder="Nome"
+                                    value={inputData.name}
+                                    onChange={handleData}
                                 />
                             </InputLabel>
 
                             <InputLabel htmlFor="email">
                                 <FormInput
-                                    value={formData.email}
-                                    onChange={handleChange}
                                     type="email"
                                     name="email"
-                                    placeholder="E-mail" />
+                                    placeholder="E-mail"
+                                    value={inputData.email}
+                                    onChange={handleData}
+                                />
                             </InputLabel>
 
                             <InputLabel htmlFor="message">
                                 <StyledTextArea
                                     id="message"
                                     name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
                                     placeholder="Assunto"
                                     rows={6}
+                                    value={inputData.message}
+                                    onChange={handleData}
                                 />
-
                             </InputLabel>
 
-                            <StyledButton type="submit">Enviar</StyledButton>
+                            <StyledButton type="submit" onClick={handleSubmit}>
+                                Enviar
+                            </StyledButton>
 
                         </Form>
                     </FormContainer>
