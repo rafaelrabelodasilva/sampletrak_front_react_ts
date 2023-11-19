@@ -1,19 +1,19 @@
 {
-    "companyName": "Sampletrak",
+    "companyName": "sampleTRAK",
     "Companyslogan": "Simplificando a excelência do controle de amostras.",
         "sectionWhatWeDo": {
             "title": "O que fazemos?",
             "content": "Nossa aplicação foi projetada para pessoas apaixonadas por qualidade e comprometidas em aperfeiçoar cada etapa do processo de amostras. Imagine poder rastrear cada detalhe, desde o momento em que a amostra é concebida até o momento em que ela é entregue ao cliente satisfeito.",
-            "image": "/assets/img_1.jpg"
+            "image": "./src/assets/img_1.jpg"
         },
         "sectionWhyChooseUs" : {
             "title": "Por que nos escolher?",
             "content": "Com nossa ferramenta, você estará no controle completo. Saiba quando sua amostra começa a tomar forma, quando estará pronta e se está dentro do prazo. Identifique a importância de cada amostra e tome decisões informadas sobre seu destino. Precisa enviar a amostra para o cliente para aprovação em mãos? Nós simplificamos isso para você.",
-            "image": "/assets/img_2.jpg"
+            "image": "./src/assets/img_2.jpg"
         },
         "sectionReadyToStart" : {
             "title": "Pronto para experimentar o futuro das amostras?",
             "content": "Deixe-nos cuidar do controle de amostras, para que você possa se concentrar no que faz de melhor. É hora de elevar seus padrões e garantir a excelência em cada amostra. Explore mais e descubra como podemos fazer a diferença para você. Entre em contato hoje mesmo!",
-            "image": "/assets/img_3.jpg"
+            "image": "./src/assets/img_3.jpg"
         }
 }

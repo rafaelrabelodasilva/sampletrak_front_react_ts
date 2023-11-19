@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Logo from '../../../public/assets/box-icon.png';
+import Logo from '../../assets/box-icon.png';
 import {
     Header,
     Wrapper,
@@ -33,7 +33,7 @@ export default function Navbar() {
         <Header>
             <Wrapper>
                 <LogoWrapper>
-                    <LogoName>SampleTrak</LogoName>
+                    <LogoName>sampleTRAK</LogoName>
                     <img src={Logo} alt="Logo" width={35} />
                 </LogoWrapper>
 

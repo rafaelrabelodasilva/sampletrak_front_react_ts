@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Pic4 from '../../../public/assets/img_4.jpg'
+import Pic4 from '../../assets/img_4.jpg'
 import {
     Wrapper,
     CompanyLogoSession,
@@ -11,6 +11,7 @@ import {
     CompanySlogan,
     TextTitle,
     TextContent,
+    SectionForm,
     FormTitle,
     FormSubtitle,
     Form,
@@ -28,11 +29,11 @@ export default function HomeContent() {
     const data = { name: '', email: '', message: '' };
     const [inputData, setInputData] = useState(data);
 
-    const handleData = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleData = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setInputData({ ...inputData, [event.target.name]: event.target.value });
     };
 
-    const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
 
         // Ajuste para enviar apenas as propriedades necessárias
@@ -57,7 +58,7 @@ export default function HomeContent() {
     };
 
     // Função para validar o formato do e-mail
-    const validateEmail = (email) => {
+    const validateEmail = (email: string) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     };
@@ -103,9 +104,9 @@ export default function HomeContent() {
                 </TextContainer>
             </Section>
 
-            <Section $flexDirection='row-reverse' $sectionHeight='50rem' $sectionHeightCell='44rem'>
+            <SectionForm $flexDirection='row-reverse'>
                 <Imgcontainer>
-                    <Image $maxSize='430px' src={Pic4} alt="Imagem nos contacte" id='img-4' />
+                    <Image src={Pic4} alt="Imagem nos contacte" id='img-4' />
                 </Imgcontainer>
 
                 <FormContainer>
@@ -152,7 +153,7 @@ export default function HomeContent() {
 
                     </Form>
                 </FormContainer>
-            </Section>
+            </SectionForm>
         </Wrapper>
     )
 }
