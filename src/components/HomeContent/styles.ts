@@ -25,6 +25,14 @@ const subtitleSize = {
     min1441: '2rem'
 }
 
+const inputSize = {
+    max425: '1.3rem',
+    max768: '1.3rem',
+    max1024: '1.4rem',
+    max1440: '1.4rem',
+    min1441: '1.5rem'
+}
+
 export const Wrapper = styled.div`
     /* background-color: cornflowerblue; */
 
@@ -525,24 +533,24 @@ export const FormInput = styled.input`
 
 
     @media (max-width: 425px) {
-        font-size: ${subtitleSize.max425};
+        font-size: ${inputSize.max425};
         line-height: 1.7rem;
     }
 
     @media (min-width: 426px) and (max-width: 768px) {
-        font-size: ${subtitleSize.max768};
+        font-size: ${inputSize.max768};
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
-        font-size: ${subtitleSize.max1024};
+        font-size: ${inputSize.max1024};
     }
 
     @media (min-width: 1025px) and (max-width: 1440px) {
-        font-size: ${subtitleSize.max1440};
+        font-size: ${inputSize.max1440};
     }
 
     @media (min-width: 1441px) {
-        font-size: ${subtitleSize.min1441};
+        font-size: ${inputSize.min1441};
     }
 `;
 
@@ -555,24 +563,24 @@ export const StyledTextArea = styled.textarea`
     font-family: 'Roboto', sans-serif;
 
     @media (max-width: 425px) {
-        font-size: ${subtitleSize.max425};
+        font-size: ${inputSize.max425};
         line-height: 1.7rem;
     }
 
     @media (min-width: 426px) and (max-width: 768px) {
-        font-size: ${subtitleSize.max768};
+        font-size: ${inputSize.max768};
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
-        font-size: ${subtitleSize.max1024};
+        font-size: ${inputSize.max1024};
     }
 
     @media (min-width: 1025px) and (max-width: 1440px) {
-        font-size: ${subtitleSize.max1440};
+        font-size: ${inputSize.max1440};
     }
 
     @media (min-width: 1441px) {
-        font-size: ${subtitleSize.min1441};
+        font-size: ${inputSize.min1441};
     }
 `;
 

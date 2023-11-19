@@ -34,7 +34,7 @@ export const LogoName = styled.h1`
     font-size: 3rem;
 
     @media (max-width: 709px) {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 `;
 
@@ -45,7 +45,8 @@ export const MenuSection = styled.div<MenuBurguerProps>`
         left: ${showMenuBurguer ? '' : '0'};
         width: ${showMenuBurguer ? '' : '100vw'};
         height: ${showMenuBurguer ? '' : '100vh'};
-        background: ${showMenuBurguer ? '' : 'linear-gradient(150deg, #07c972, #359d9e)'};
+        background: ${showMenuBurguer ? '' : '#27374D'};
+        /* background: ${showMenuBurguer ? '' : 'linear-gradient(150deg, #07c972, #359d9e)'}; */
         display: ${showMenuBurguer ? '' : 'flex'};
         align-items: ${showMenuBurguer ? '' : 'center'};
         justify-content: ${showMenuBurguer ? '' : 'center'};
