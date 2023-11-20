@@ -170,7 +170,6 @@ export const Section = styled.section<{
     justify-content: center;
     width: 100%;
 
-
     @media (max-width: 425px) {
         padding: 2rem;
         height: 18rem;

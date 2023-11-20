@@ -1,0 +1,15 @@
+{
+    "companyName": "sampleTRAK",
+    "companyIcon": "./src/assets/box-icon.png",
+    "companyIconDescription": "Logo da marca",
+    "actionLinks": {
+        "home": {
+            "name": "Home",
+            "endpoint": "/"
+        },
+        "login": {
+            "name": "Login",
+            "endpoint": "/login"
+        }
+    }
+}

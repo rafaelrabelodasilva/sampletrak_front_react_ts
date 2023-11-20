@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Logo from '../../assets/box-icon.png';
+import HeaderContent from '../../content/HeaderContent.json'
 import {
     Header,
     Wrapper,
@@ -33,8 +33,8 @@ export default function Navbar() {
         <Header>
             <Wrapper>
                 <LogoWrapper>
-                    <LogoName>sampleTRAK</LogoName>
-                    <img src={Logo} alt="Logo" width={35} />
+                    <LogoName>{HeaderContent.companyName}</LogoName>
+                    <img src={HeaderContent.companyIcon} alt={HeaderContent.companyIconDescription} width={35} />
                 </LogoWrapper>
 
                 <MenuSection {...showMenuBurguerProps}>
@@ -46,16 +46,15 @@ export default function Navbar() {
 
                     <Nav {...showMenuBurguerProps}>
                         <StyledUl {...showMenuBurguerProps}>
-                            <StyledLi>
-                                <StyledLink href="/" {...showMenuBurguerProps}>
-                                    Home
-                                </StyledLink>
-                            </StyledLi>
-                            <StyledLi>
-                                <StyledLink href="#" {...showMenuBurguerProps}>
-                                    Login
-                                </StyledLink>
-                            </StyledLi>
+
+                            {Object.entries(HeaderContent.actionLinks).map(([key, value]) => (
+                                <StyledLi key={key}>
+                                    <StyledLink href={value.endpoint} {...showMenuBurguerProps}>
+                                        {value.name}
+                                    </StyledLink>
+                                </StyledLi>
+                            ))}
+
                         </StyledUl>
                     </Nav>
                 </MenuSection>
@@ -63,3 +62,8 @@ export default function Navbar() {
         </Header>
     );
 }
+
+{/* 
+-> A função Object.entries é uma função do JavaScript que retorna um array contendo os pares chave-valor de um objeto. 
+Essa função retorna um array de arrays, onde cada subarray contém dois elementos: o primeiro elemento é a chave (string) e o segundo elemento é o valor associado a essa chave. A ordem dos pares no array é a mesma que a ordem em que as propriedades foram inseridas no objeto.
+*/}

@@ -68,7 +68,7 @@ export default function HomeContent() {
         <Wrapper>
             <CompanyLogoSession>
                 <CompanyName>{HomeText.companyName}</CompanyName>
-                <CompanySlogan>{HomeText.Companyslogan}</CompanySlogan>
+                <CompanySlogan>{HomeText.companyslogan}</CompanySlogan>
             </CompanyLogoSession>
 
             <Section>

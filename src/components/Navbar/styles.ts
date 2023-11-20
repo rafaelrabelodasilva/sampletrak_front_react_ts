@@ -7,7 +7,6 @@ type MenuBurguerProps = {
 };
 
 export const Header = styled.header`
-    /* background: linear-gradient(90deg, #07c972, #359d9e); */
     background-color: #27374D;
 `;
 
