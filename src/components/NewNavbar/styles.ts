@@ -72,3 +72,61 @@ export const Nav = styled.nav`
         color: white;
     }
 `;
+
+export const MenuSection = styled.div`
+        /* position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #27374D;
+        /* background: linear-gradient(150deg, #07c972, #359d9e)'}; */
+        display: flex;
+        align-items: center;
+        justify-content: center; */
+`;
+
+export const MenuBurguer = styled.div`
+
+        position: absolute;
+        right: 20px;
+        top: 20px;
+
+    @media (max-width: 709px) {
+        width: 40px;
+        height: 30px;
+    }
+`;
+
+export const MenuBurguerLine1 = styled.div`
+            transform: rotate(45deg) translate(7px, 7px);
+    @media (max-width: 709px) {
+        background-color: white;
+        height: 5px; // altura de cada barrinha
+        width: 100%;
+        margin: 6px auto;
+        transition-duration: 0.3s;
+    }
+`;
+
+export const MenuBurguerLine2 = styled.div`
+            opacity: 0;
+    @media (max-width: 709px) {
+        background-color: white;
+        height: 5px; // altura de cada barrinha
+        width: 100%;
+        margin: 6px auto;
+        transition-duration: 0.3s;
+    }
+`;
+
+export const MenuBurguerLine3 = styled.div`
+            transform: rotate(-45deg) translate(8px, -9px);
+    @media (max-width: 709px) {
+        background-color: white;
+        height: 5px; // altura de cada barrinha
+        width: 100%;
+        margin: 6px auto;
+        transition-duration: 0.3s;
+    }
+`;

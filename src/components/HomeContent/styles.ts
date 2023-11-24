@@ -109,6 +109,10 @@ export const CompanyName = styled.h1`
     text-align: start;
     color: #27374D;
 
+    span {
+        color: #d38c00;
+    }
+
 
     @media (max-width: 425px) {
         font-size: ${logoSize.max425};

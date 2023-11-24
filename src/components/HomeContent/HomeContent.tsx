@@ -67,7 +67,8 @@ export default function HomeContent() {
 
         <Wrapper>
             <CompanyLogoSession>
-                <CompanyName>{HomeText.companyName}</CompanyName>
+            <CompanyName>sample<span>TRAK</span></CompanyName>
+                {/* <CompanyName>{HomeText.companyName}</CompanyName> */}
                 <CompanySlogan>{HomeText.companyslogan}</CompanySlogan>
             </CompanyLogoSession>
 

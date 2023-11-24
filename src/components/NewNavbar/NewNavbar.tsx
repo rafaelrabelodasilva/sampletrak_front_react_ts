@@ -4,7 +4,12 @@ import {
     Header,
     Wrapper,
     LogoContainer,
-    Nav
+    Nav,
+    MenuSection,
+    MenuBurguer,
+    MenuBurguerLine1,
+    MenuBurguerLine2,
+    MenuBurguerLine3
 } from './styles'
 
 interface NavbarProps {
@@ -13,6 +18,7 @@ interface NavbarProps {
 
 const NewNavbar: React.FC<NavbarProps> = (props) => {
     const [showBurgerMenu, setShowBurgerMenu] = useState<boolean>(false);
+    const [showLinkBurguer, setShowLinkBurguer] = useState<boolean>(false)
 
     useEffect(() => {
         const handleResize = () => {
@@ -36,34 +42,49 @@ const NewNavbar: React.FC<NavbarProps> = (props) => {
         <div>
             {showBurgerMenu ? (
                 // Renderiza o menu de hambúrguer se a largura da tela for menor ou igual a 768px
-                // Substitua isso pelo seu componente de menu de hambúrguer
-                <div>
-                    <button onClick={() => setShowBurgerMenu(false)}>Fechar</button>
-                    <p>Conteúdo do Menu de Hambúrguer</p>
-                </div>
+                <Header>
+                    <Wrapper>
+                        <LogoContainer>
+                            {/* <p>{HeaderContent.companyName}</p> */}
+                            <p>sample<span>TRAK</span></p>
+                            <img src={HeaderContent.companyIcon} alt={HeaderContent.companyIconDescription} />
+                        </LogoContainer>
+                        <MenuSection>
+                            <MenuBurguer onClick={() => setShowLinkBurguer(false)}>
+                                <MenuBurguerLine1 />
+                                <MenuBurguerLine2 />
+                                <MenuBurguerLine3 />
+                            </MenuBurguer>
+                        </MenuSection>
+                    </Wrapper>
+                </Header>
+                {showLinkBurguer
+                    ? <div>Oi</div>
+                    : 
+                }
             ) : (
                 // Renderiza o navbar normalmente se a largura da tela for maior que 768px
                 <Header>
-                <Wrapper>
-                    <LogoContainer>
-                        {/* <p>{HeaderContent.companyName}</p> */}
-                        <p>sample<span>TRAK</span></p>
-                        <img src={HeaderContent.companyIcon} alt={HeaderContent.companyIconDescription} />
-                    </LogoContainer>
-                    <Nav>
-                        <ul>
+                    <Wrapper>
+                        <LogoContainer>
+                            {/* <p>{HeaderContent.companyName}</p> */}
+                            <p>sample<span>TRAK</span></p>
+                            <img src={HeaderContent.companyIcon} alt={HeaderContent.companyIconDescription} />
+                        </LogoContainer>
+                        <Nav>
+                            <ul>
 
-                            {Object.entries(HeaderContent.actionLinks).map(([key, value]) => (
-                                <li key={key}>
-                                    <a href={value.endpoint}>
-                                        {value.name}
-                                    </a>
-                                </li>
-                            ))}
+                                {Object.entries(HeaderContent.actionLinks).map(([key, value]) => (
+                                    <li key={key}>
+                                        <a href={value.endpoint}>
+                                            {value.name}
+                                        </a>
+                                    </li>
+                                ))}
 
-                        </ul>
-                    </Nav>
-                </Wrapper>
+                            </ul>
+                        </Nav>
+                    </Wrapper>
                 </Header>
             )}
         </div>
