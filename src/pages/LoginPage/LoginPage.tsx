@@ -1,12 +1,12 @@
-import HomeContent from "../../components/HomeContent/HomeContent";
+import LoginContent from "../../components/LoginContent/LoginContent";
 import Navbar from "../../components/Navbar/Navbar";
 import { Wrapper } from './styles'
 
-export default function HomePage() {
+export default function LoginPage() {
     return (
         <Wrapper>
             <Navbar />
-            <HomeContent />
+            <LoginContent />
         </Wrapper>
     )
 }

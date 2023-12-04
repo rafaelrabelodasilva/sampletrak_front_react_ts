@@ -49,7 +49,7 @@ export default function HomeContent() {
             .post('http://localhost:3000/comunicacoes', { nome: name, email: email, assunto: message, ativo: 1 })
             .then((response) => {
                 console.log(response);
-                alert('Funcionou!');
+                alert('Agradecemos seu contato!');
             })
             .catch((error) => {
                 console.error('Erro na requisição:', error);
